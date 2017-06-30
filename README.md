@@ -18,7 +18,7 @@ notifications to st2. This trigger type is then referenced in st2 rules. See
 2. Copy st2service_handler.py  and st2service_handler.yaml to /usr/local/nagios/libexec/
 
     ```bash
-    cp st2service_handler.* /usr/local/nagios/libexec/
+    cp etc/st2service_handler.* /usr/local/nagios/libexec/
     ```
 3. Make sure st2service_handler.py is executable.
 
