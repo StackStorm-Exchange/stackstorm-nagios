@@ -18,7 +18,7 @@ except ImportError:
 
 try:
     import yaml
-    requests.packages.urllib3.disable_warnings()
+    requests.packages.urllib3.disable_warnings()  # pylint: disable=no-member
 except ImportError:
     raise ImportError('Missing dependency pyyaml. \
                       Do ``pip install pyyaml``.')
