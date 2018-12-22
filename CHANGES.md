@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.2
+
+* Linting fixes
+
 ## v0.2.1
 
 * Version bump to fix tagging issue. No code changes.

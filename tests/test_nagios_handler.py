@@ -114,6 +114,7 @@ class NagiosHandlerTestCase(unittest2.TestCase):
     def test_create_trigger_type(self):
         nagios_handler.ST2_API_BASE_URL = 'https://localhost/api/v1/'
         nagios_handler._create_trigger_type()
+        # pylint: disable=no-member
         requests.post.assert_called_once_with('https://localhost/api/v1/triggertypes',
             data='{"description": "Trigger type for nagios event handler.", ' +
                  '"name": "service_state_change", "pack": "nagios"}',
@@ -125,6 +126,7 @@ class NagiosHandlerTestCase(unittest2.TestCase):
         nagios_handler.ST2_API_BASE_URL = 'https://localhost/api/v1/'
         nagios_handler.ST2_SSL_VERIFY = True
         nagios_handler._create_trigger_type()
+        # pylint: disable=no-member
         requests.post.assert_called_with('https://localhost/api/v1/triggertypes',
             data='{"description": "Trigger type for nagios event handler.", ' +
                  '"name": "service_state_change", "pack": "nagios"}',
