@@ -12,6 +12,8 @@ import argparse
 from six.moves.urllib import parse as urlparse
 from six.moves import http_client
 
+urljoin = urlparse.urljoin
+
 try:
     import requests
 except ImportError:
