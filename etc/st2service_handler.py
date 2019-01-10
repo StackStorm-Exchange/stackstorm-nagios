@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import httplib
 try:
     import simplejson as json
 except ImportError:
@@ -8,8 +7,11 @@ except ImportError:
 import os
 import sys
 import traceback
-from urlparse import urljoin
 import argparse
+
+from six.moves.urllib import parse as urlparse
+from six.moves import http_client
+
 try:
     import requests
 except ImportError:
@@ -51,8 +53,8 @@ REGISTERED_WITH_ST2 = False
 UNAUTHED = False
 IS_API_KEY_AUTH = False
 
-OK_CODES = [httplib.OK, httplib.CREATED, httplib.ACCEPTED, httplib.CONFLICT]
-UNREACHABLE_CODES = [httplib.NOT_FOUND]
+OK_CODES = [http_client.OK, http_client.CREATED, http_client.ACCEPTED, http_client.CONFLICT]
+UNREACHABLE_CODES = [http_client.NOT_FOUND]
 
 TOKEN_AUTH_HEADER = 'X-Auth-Token'
 API_KEY_AUTH_HEADER = 'St2-Api-Key'
@@ -172,7 +174,7 @@ def _register_trigger_with_st2(verbose=False):
         get_resp = requests.get(triggers_url, headers=headers,
                                 verify=ST2_SSL_VERIFY)
 
-        if get_resp.status_code != httplib.OK:
+        if get_resp.status_code != http_client.OK:
             _create_trigger_type(verbose=verbose)
         else:
             body = json.loads(get_resp.text)
