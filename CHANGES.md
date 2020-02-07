@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.3
+
+- Add explicit support for Python 2 and 3
+
 ## v0.2.2
 
 * Linting fixes
