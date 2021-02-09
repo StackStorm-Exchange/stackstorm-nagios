@@ -81,7 +81,7 @@ def _create_trigger_type(verbose=False):
             print('POST to URL {0} for registering trigger. Body = {1}, '
                   'headers = {2}.\n'.format(url, payload, headers))
 
-        post_resp = requests.post(url, data=json.dumps(payload),
+        post_resp = requests.post(url, json=payload,
                                   headers=headers,
                                   verify=ST2_SSL_VERIFY)
     except Exception:

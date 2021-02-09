@@ -115,10 +115,17 @@ class NagiosHandlerTestCase(unittest2.TestCase):
         nagios_handler.ST2_API_BASE_URL = 'https://localhost/api/v1/'
         nagios_handler._create_trigger_type()
         # pylint: disable=no-member
-        requests.post.assert_called_once_with('https://localhost/api/v1/triggertypes',
-            data='{"description": "Trigger type for nagios event handler.", ' +
-                 '"name": "service_state_change", "pack": "nagios"}',
-            headers={'Content-Type': 'application/json; charset=utf-8'}, verify=False)
+        requests.post.assert_called_once_with(
+            'https://localhost/api/v1/triggertypes',
+            json={
+                "name": "service_state_change",
+                "description": "Trigger type for nagios event handler.",
+                "pack": "nagios",
+            },
+            headers={
+                'Content-Type': 'application/json; charset=utf-8',
+            },
+            verify=False)
 
     @mock.patch.object(requests, 'post', mock.MagicMock(
         return_value=FakeResponse(json.dumps({}), status_code=200, reason='blah')))
@@ -127,11 +134,17 @@ class NagiosHandlerTestCase(unittest2.TestCase):
         nagios_handler.ST2_SSL_VERIFY = True
         nagios_handler._create_trigger_type()
         # pylint: disable=no-member
-        requests.post.assert_called_with('https://localhost/api/v1/triggertypes',
-            data='{"description": "Trigger type for nagios event handler.", ' +
-                 '"name": "service_state_change", "pack": "nagios"}',
-            headers={'Content-Type': 'application/json; charset=utf-8'}, verify=True
-        )
+        requests.post.assert_called_with(
+            'https://localhost/api/v1/triggertypes',
+            json={
+                "name": "service_state_change",
+                "description": "Trigger type for nagios event handler.",
+                "pack": "nagios",
+            },
+            headers={
+                'Content-Type': 'application/json; charset=utf-8',
+            },
+            verify=True)
 
     def test_post_event_to_st2_bad_api_url(self):
         nagios_handler.ST2_API_BASE_URL = 'https://localhost/api'
