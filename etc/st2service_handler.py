@@ -56,8 +56,9 @@ UNAUTHED = False
 IS_API_KEY_AUTH = False
 
 OK_CODES = [
+    # pylint: disable=no-member
     http_client.OK, http_client.CREATED, http_client.ACCEPTED, http_client.CONFLICT
-]  # pylint: disable=no-member
+]
 UNREACHABLE_CODES = [http_client.NOT_FOUND]  # pylint: disable=no-member
 
 TOKEN_AUTH_HEADER = 'X-Auth-Token'
