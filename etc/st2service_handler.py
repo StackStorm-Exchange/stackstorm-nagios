@@ -56,8 +56,9 @@ UNAUTHED = False
 IS_API_KEY_AUTH = False
 
 OK_CODES = [
+    # pylint: disable=no-member
     http_client.OK, http_client.CREATED, http_client.ACCEPTED, http_client.CONFLICT
-]  # pylint: disable=no-member
+]
 UNREACHABLE_CODES = [http_client.NOT_FOUND]  # pylint: disable=no-member
 
 TOKEN_AUTH_HEADER = 'X-Auth-Token'
@@ -80,7 +81,7 @@ def _create_trigger_type(verbose=False):
             print('POST to URL {0} for registering trigger. Body = {1}, '
                   'headers = {2}.\n'.format(url, payload, headers))
 
-        post_resp = requests.post(url, data=json.dumps(payload),
+        post_resp = requests.post(url, json=payload,
                                   headers=headers,
                                   verify=ST2_SSL_VERIFY)
     except Exception:
