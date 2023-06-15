@@ -10,7 +10,7 @@ payload_schema:
     service:
       type: string
     event_id:
-      type: integer
+      type: string
     state:
       type: string
     state_id:
