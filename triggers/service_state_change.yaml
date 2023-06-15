@@ -1,6 +1,6 @@
 ---
 name: service_state_change
-pack: nagioscustom
+pack: nagios
 description: 'Trigger type for nagios service state change event.'
 payload_schema:
   type: object
