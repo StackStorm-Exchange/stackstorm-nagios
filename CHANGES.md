@@ -2,7 +2,7 @@
 
 ## v1.1.0
 
-* Fix ssl_verify for one request.
+* Fix ssl_verify for remaining request.
   
 ## v1.0.0
 
