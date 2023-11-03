@@ -2,3 +2,24 @@
 name: service_state_change
 pack: nagios
 description: 'Trigger type for nagios service state change event.'
+payload_schema:
+  type: object
+  properties:
+    host:
+      type: string
+    service:
+      type: string
+    event_id:
+      type: string
+    state:
+      type: string
+    state_id:
+      type: string
+    state_type:
+      type: string
+    attempt:
+      type: string
+    msg:
+      type: string
+    instlink:
+      type: string
