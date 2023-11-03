@@ -2,7 +2,7 @@
 
 ## v1.0.1
 
-* Fix ssl_verify for remaining request.
+* Fix `ssl_verify` config was not respected for all requests in `st2service_handler`. #9
   
 ## v1.0.0
 
