@@ -220,7 +220,7 @@ def _post_webhook(url, body, verbose=False):
             print('Webhook POST: url: {0}, headers: {1}, body: {2}\n'
                   .format(url, headers, body))
         r = requests.post(url, data=json.dumps(body), headers=headers,
-                          verify=False)
+                          verify=ST2_SSL_VERIFY)
     except Exception:
         traceback.print_exc(10)
         raise Exception('Cannot connect to st2 endpoint {0}.'.format(url))
