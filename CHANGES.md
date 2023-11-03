@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.1.0
+## v1.0.1
 
 * Fix ssl_verify for remaining request.
   
