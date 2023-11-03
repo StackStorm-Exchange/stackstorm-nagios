@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.0
+
+* Fix ssl_verify for one request.
+  
 ## v1.0.0
 
 * Drop Python 2.7 support
