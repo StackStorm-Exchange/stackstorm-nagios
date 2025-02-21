@@ -3,7 +3,7 @@ import json
 import mock
 import requests
 import responses
-import unittest2
+import unittest
 
 import st2service_handler as nagios_handler
 
@@ -27,7 +27,7 @@ class FakeResponse(object):
         raise Exception(self.reason)
 
 
-class NagiosHandlerTestCase(unittest2.TestCase):
+class NagiosHandlerTestCase(unittest.TestCase):
 
     def test_st2_headers_token_auth(self):
         nagios_handler.IS_API_KEY_AUTH = False
