@@ -1,6 +1,10 @@
 # Changelog
 
-## v1.0.1
+## v1.1.1
+
+* Ficed CI errors. Switching to unittest because unittest2 is no longer compatible with python 3.10+
+
+## v1.1.0
 
 * Fix `ssl_verify` config was not respected for all requests in `st2service_handler`. #9
   
